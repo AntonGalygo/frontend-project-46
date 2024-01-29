@@ -1,10 +1,11 @@
 import * as fs from 'node:fs';
 import path from 'node:path';
+import cwd from 'node:process';
 
-const parser = (file) => {
+const reader = (file) => {
   const filepath = path.resolve(file);
   const result = fs.readFileSync(filepath);
-  return JSON.parse(result);
+  return result;
 };
 
-export default parser;
+export default reader;
