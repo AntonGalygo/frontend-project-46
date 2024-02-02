@@ -5,3 +5,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ab5133896b42ba6c36d2/maintainability)](https://codeclimate.com/github/AntonGalygo/frontend-project-46/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ab5133896b42ba6c36d2/test_coverage)](https://codeclimate.com/github/AntonGalygo/frontend-project-46/test_coverage)
+
+https://asciinema.org/a/0mHWIZcIi4xEvWK5xty5eYxtR
