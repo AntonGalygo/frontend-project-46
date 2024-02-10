@@ -24,4 +24,6 @@ const genDiff = (file1, file2) => {
   return result;
 };
 
+console.log(genDiff({ numb: 1 }, { numb: 1 }));
+
 export default genDiff;
