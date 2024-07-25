@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
+import getDifferent from '../src/index.js';
 
 const program = new Command();
 
@@ -10,8 +11,9 @@ program
   .option('-f, --format <type>', 'output format', 'stylish')
   .argument('<filepath1>')
   .argument('<filepath2>')
-  .action((filepath1, filepath2, options) => {
-    console.log(genDiff(filepath1, filepath2, options.format));
+  .action((filepath1, filepath2) => {
+    const result = getDifferent(filepath1, filepath2);
+    console.log(result);
   });
 
 program.parse();
