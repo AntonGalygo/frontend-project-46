@@ -14,6 +14,7 @@ export const getDifferent = (filepath1, filepath2) => {
   const keys = _.uniq([...keys1, ...keys2]);
   keys.sort();
   let result = '';
+  /* eslint-disable-next-line */
   for (const key of keys) {
     if (dataFile1[key] === dataFile2[key]) {
       result += `  ${key}: ${dataFile1[key]}\n`;
