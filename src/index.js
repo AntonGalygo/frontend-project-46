@@ -1,5 +1,5 @@
-import parser from './parser.js';
 import _ from 'lodash';
+import parser from './parser.js';
 
 const getDifferent = (filepath1, filepath2) => {
   const dataFile1 = parser(filepath1);
