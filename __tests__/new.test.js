@@ -8,7 +8,12 @@ const __dirname = path.dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-test('different check', () => {
+test('plain check', () => {
   const result = readFile('__fixtures__/plain.txt');
-  expect(getDifferent(getFixturePath('file1.json'), getFixturePath('file2.json'))).toEqual(result);
+  expect(getDifferent(getFixturePath('file1.json'), getFixturePath('file2.json'), 'plain')).toEqual(result);
+});
+
+test('stylish check', () => {
+  const result = readFile('__fixtures__/stylish.txt');
+  expect(getDifferent(getFixturePath('file1.json'), getFixturePath('file2.json'), 'stylish')).toEqual(result);
 });
