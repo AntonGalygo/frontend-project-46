@@ -11,8 +11,8 @@ program
   .option('-f, --format <type>', 'output format (default: "stylish")')
   .argument('<filepath1>')
   .argument('<filepath2>')
-  .action((filepath1, filepath2) => {
-    const result = getDifferent(filepath1, filepath2);
+  .action((filepath1, filepath2, option) => {
+    const result = getDifferent(filepath1, filepath2, option.format);
     console.log(result);
   });
 
