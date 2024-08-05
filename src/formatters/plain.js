@@ -19,19 +19,18 @@ const getPlain = (tree) => {
   function iter(object, path) {
     const result = object.map((key) => {
       const fullKey = `${path}${key.key}`;
-      if (key.type === 'delete') {
-        return `Property '${fullKey}' ${data.deleted}`;
+      switch (key.type) {
+        case 'delete':
+          return `Property '${fullKey}' ${data.deleted}`;
+        case 'add':
+          return `Property '${fullKey}' ${data.added} ${getString(key.value2)}`;
+        case 'parent':
+          return iter(key.children, `${fullKey}.`);
+        case 'change':
+          return `Property '${fullKey}' ${data.changed} ${getString(key.value1)} to ${getString(key.value2)}`;
+        default:
+          return null;
       }
-      if (key.type === 'add') {
-        return `Property '${fullKey}' ${data.added} ${getString(key.value2)}`;
-      }
-      if (key.type === 'parent') {
-        return iter(key.children, `${fullKey}.`);
-      }
-      if (key.type === 'change') {
-        return `Property '${fullKey}' ${data.changed} ${getString(key.value1)} to ${getString(key.value2)}`;
-      }
-      return null;
     });
     return result.filter((item) => item != null).join('\n');
   }
