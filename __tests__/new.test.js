@@ -17,3 +17,8 @@ test('stylish check', () => {
   const result = readFile('__fixtures__/stylish.txt');
   expect(getDifferent(getFixturePath('file1.json'), getFixturePath('file2.json'), 'stylish')).toEqual(result);
 });
+
+test('json check', () => {
+  const result = readFile('__fixtures__/json.txt');
+  expect(getDifferent(getFixturePath('file1.json'), getFixturePath('file2.json'), 'json')).toEqual(result);
+});
